@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
+    bucket         = "devops-directive-tf-state-1956"
     key            = "04-variables-and-outputs/examples/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-locking"
@@ -23,6 +23,7 @@ locals {
   extra_tag = "extra-tag"
 }
 
+# variables defined in variabes.tf file
 resource "aws_instance" "instance" {
   ami           = var.ami
   instance_type = var.instance_type
